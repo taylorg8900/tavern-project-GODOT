@@ -245,14 +245,12 @@ tile_set = SubResource("TileSet_diskh")
 [node name="Player" parent="." instance=ExtResource("3_clm4r")]
 
 [node name="global shadow" type="DirectionalLight2D" parent="Player"]
-visible = false
 blend_mode = 1
 
 [node name="gun" parent="Player" instance=ExtResource("4_nl3p1")]
 position = Vector2(8, -7)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
 
 [node name="PointLight2D" parent="Player" instance=ExtResource("6_j41om")]
 
