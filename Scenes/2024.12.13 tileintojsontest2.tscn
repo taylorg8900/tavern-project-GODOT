@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://rt34qxkl8dbw"]
+
+[ext_resource type="Script" path="res://Scripts/test scrips/2024.12.13_tileintojsontest_2.gd" id="1_2dikm"]
+[ext_resource type="Texture2D" uid="uid://cywpjppcln72e" path="res://Assets/Tiles/tile layout.png" id="2_v6icc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmrj2"]
+texture = ExtResource("2_v6icc")
+texture_region_size = Vector2i(4, 4)
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+1:4/0 = 0
+1:5/0 = 0
+1:6/0 = 0
+2:4/0 = 0
+2:5/0 = 0
+2:6/0 = 0
+3:4/0 = 0
+3:5/0 = 0
+4:4/0 = 0
+4:5/0 = 0
+5:4/0 = 0
+5:5/0 = 0
+6:4/0 = 0
+6:5/0 = 0
+7:4/0 = 0
+7:5/0 = 0
+8:4/0 = 0
+8:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tcmj6"]
+tile_size = Vector2i(4, 4)
+sources/0 = SubResource("TileSetAtlasSource_bmrj2")
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_2dikm")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_tcmj6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.5, 3.5)
+
+[node name="savebutton" type="Button" parent="."]
+offset_left = -161.0
+offset_top = -90.0
+offset_right = -52.0
+offset_bottom = -59.0
+text = "press to save"
+
+[node name="loadbutton" type="Button" parent="."]
+offset_left = -48.0
+offset_top = -90.0
+offset_right = 60.0
+offset_bottom = -59.0
+text = "press to load"
+alignment = 0
+
+[node name="randombutton" type="Button" parent="."]
+offset_left = -161.0
+offset_top = -56.0
+offset_right = 3.0
+offset_bottom = -25.0
+text = "place tiles randomly"
+alignment = 0
+
+[node name="resetbutton" type="Button" parent="."]
+offset_left = 7.0
+offset_top = -55.0
+offset_right = 55.0
+offset_bottom = -24.0
+text = "reset
+"
+alignment = 0
+
+[node name="clearbutton" type="Button" parent="."]
+offset_left = 61.0
+offset_top = -89.0
+offset_right = 166.0
+offset_bottom = -58.0
+text = "clear all tiles
+"
+alignment = 0

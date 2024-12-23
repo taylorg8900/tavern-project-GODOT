@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://2hihaqpayuro"]
+
+[ext_resource type="Script" path="res://Scripts/test scrips/2024.12.15 room test.gd" id="1_g28d7"]
+[ext_resource type="Texture2D" uid="uid://bdxqc4lgq1q1q" path="res://Assets/Tiles/tile layout 2.png" id="2_plp4k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fh6qf"]
+texture = ExtResource("2_plp4k")
+texture_region_size = Vector2i(4, 4)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pbys8"]
+tile_size = Vector2i(4, 4)
+sources/0 = SubResource("TileSetAtlasSource_fh6qf")
+
+[node name="Room Test" type="Node2D"]
+script = ExtResource("1_g28d7")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_pbys8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(273, 141)
+zoom = Vector2(2, 2)

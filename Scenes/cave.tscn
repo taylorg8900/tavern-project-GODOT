@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5fjl5hqr4gwn"]
+
+[ext_resource type="Script" path="res://Scripts/cave.gd" id="1_0u6pe"]
+[ext_resource type="PackedScene" uid="uid://dpkw24etcr1ox" path="res://Scenes/player.tscn" id="1_e7s38"]
+[ext_resource type="PackedScene" uid="uid://b14g1bmxgxaof" path="res://Scenes/tile_map.tscn" id="2_681hn"]
+[ext_resource type="PackedScene" uid="uid://hg7o5ojpslom" path="res://Scenes/gun.tscn" id="3_1f887"]
+[ext_resource type="Texture2D" uid="uid://cdt7efxql18vf" path="res://Assets/Sprites/rocks normals/rock gemstone.png" id="4_u7fef"]
+[ext_resource type="PackedScene" uid="uid://b2cbil0511et5" path="res://Scenes/point_light_2d.tscn" id="4_vk1ok"]
+
+[sub_resource type="Gradient" id="Gradient_0edxl"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_txag6"]
+gradient = SubResource("Gradient_0edxl")
+fill = 1
+fill_from = Vector2(0.530488, 0.512195)
+fill_to = Vector2(0.932927, 0.134146)
+
+[node name="Cave" type="Node2D"]
+script = ExtResource("1_0u6pe")
+
+[node name="TileMap" parent="." instance=ExtResource("2_681hn")]
+
+[node name="Player" parent="." instance=ExtResource("1_e7s38")]
+z_index = 5
+position = Vector2(461, 160)
+
+[node name="globalshadow" type="DirectionalLight2D" parent="Player"]
+visible = false
+blend_mode = 1
+
+[node name="PointLight2D" parent="Player" instance=ExtResource("4_vk1ok")]
+visible = false
+
+[node name="gun" parent="Player" instance=ExtResource("3_1f887")]
+visible = false
+position = Vector2(6, -6)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
+
+[node name="Rocks" type="Node" parent="."]
+
+[node name="gem1" type="Sprite2D" parent="Rocks"]
+position = Vector2(20, -7)
+texture = ExtResource("4_u7fef")
+
+[node name="gem2" type="Sprite2D" parent="Rocks"]
+position = Vector2(-16, 25)
+texture = ExtResource("4_u7fef")
+
+[node name="gem3" type="Sprite2D" parent="Rocks"]
+position = Vector2(8, 56)
+texture = ExtResource("4_u7fef")
+
+[node name="gem4" type="Sprite2D" parent="Rocks"]
+position = Vector2(-30, 88)
+texture = ExtResource("4_u7fef")
+
+[node name="gem5" type="Sprite2D" parent="Rocks"]
+position = Vector2(50, 88)
+texture = ExtResource("4_u7fef")
+
+[node name="gem6" type="Sprite2D" parent="Rocks"]
+position = Vector2(54, 25)
+texture = ExtResource("4_u7fef")
+
+[node name="gem7" type="Sprite2D" parent="Rocks"]
+position = Vector2(116, 55)
+texture = ExtResource("4_u7fef")
+
+[node name="mouselight" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(49, 19)
+energy = 16.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_txag6")

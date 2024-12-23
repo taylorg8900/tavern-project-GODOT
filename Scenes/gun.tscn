@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://hg7o5ojpslom"]
+
+[ext_resource type="Texture2D" uid="uid://woxeoy6oaks3" path="res://icon.svg" id="1_fwvox"]
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_hykue"]
+[ext_resource type="Texture2D" uid="uid://ctj7fjt231oue" path="res://Assets/Sprites/gun.png" id="2_2yarc"]
+[ext_resource type="Texture2D" uid="uid://dt55d3d4hmyrv" path="res://Assets/Sprites/flashlight9.png" id="4_nedeg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7e6a0"]
+light_mode = 1
+
+[node name="gun" type="Node2D"]
+script = ExtResource("1_hykue")
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(48, 23)
+texture = ExtResource("1_fwvox")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-7, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
+material = SubResource("CanvasItemMaterial_7e6a0")
+position = Vector2(7, 0)
+texture = ExtResource("2_2yarc")
+
+[node name="PointLight2D" type="PointLight2D" parent="Marker2D/Sprite2D"]
+position = Vector2(3, -1)
+energy = 2.23
+blend_mode = 2
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("4_nedeg")
+offset = Vector2(128, -0.5)
