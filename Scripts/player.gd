@@ -6,10 +6,10 @@ extends CharacterBody2D
 @onready var coyote_timer = $CoyoteTimer
 
 const GRAVITY = 340
-const MAX_HORIZONTAL_SPEED = 67
+const MAX_HORIZONTAL_SPEED = 70
 const HORIZONTAL_ACCELERATION = 550
 const JUMP_SPEED = 160
-const JUMP_TERMINATION_MULTIPLIER = 4
+const JUMP_TERMINATION_MULTIPLIER = 2.5
 
 
 func _physics_process(delta):
@@ -55,13 +55,7 @@ func get_input_vector():
 	return input_vector
 
 func update_animation(input_vector):
-	'''
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction > 0:
-		marker_2d.scale.x =  1
-	elif direction < 0:
-		marker_2d.scale.x = -1
-	'''
+	
 	#if !is_on_floor():
 		#animated_sprite.play("jump")
 	if input_vector.x != 0:

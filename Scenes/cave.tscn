@@ -26,18 +26,14 @@ z_index = 5
 position = Vector2(461, 160)
 
 [node name="globalshadow" type="DirectionalLight2D" parent="Player"]
-visible = false
 blend_mode = 1
 
 [node name="PointLight2D" parent="Player" instance=ExtResource("4_vk1ok")]
-visible = false
 
 [node name="gun" parent="Player" instance=ExtResource("3_1f887")]
-visible = false
 position = Vector2(6, -6)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-visible = false
 
 [node name="Rocks" type="Node" parent="."]
 
