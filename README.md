@@ -4,7 +4,7 @@ I decided around November 2024 to get into using the Godot Game Engine, because 
 
 I haven't touched the code or files in here since the start of the spring semester of 2025, but after learning the importantance of using Git, creating documentation (not just reading or using it), and making Software Development Plans, I realize that I really didn't know anything while making any of the code in here. I will re create this repository at some point in the future, but if anyone comes across this and tries to make sense of how it is structured, I can only say I am sorry.
 
-That said, here are all of the things that I feel I learned that I wouldn't have as a college freshman:
+That said, here are all of the things I learned that I feel I wouldn't have as a college freshman:
 - GDScript
 - GLSL shader language ([The Book of Shaders](https://thebookofshaders.com) is a very good resource for learning GLSL)
 - Dictionaries
